@@ -1,0 +1,368 @@
+<!DOCTYPE html >
+<!--
+Program: Hw2.html
+Author: Zach Qi
+Date: 2026/03/10
+Version: 1.1
+Description: Patient Registration Form
+-->
+<html lang="en">
+<head> 
+    <title>Hw2 Form</title>
+    <link rel="stylesheet" href="Homework2.css">
+ </head>
+ <body>
+
+            <!---Header section with logo, title, and date-->
+             <header>
+                <div class="center">
+                <table> 
+                    <td valign="top" align="left" width="20"
+                        ,<div class="image">
+                            <img align="center" src="Hw2.logo.png" alt="Flash medical logo" width="150px" id="logo"
+                        </div>
+                    </td>
+                    <h1>Flash Medical | Patient Registration</h1>
+                    <p>Today's Date: <span id="today"></span></p>
+                </table>
+                </div>
+             </header> 
+                <div>
+                    <hr>
+                </div>
+                <!---Form section with various input fields for patient information--->
+               <form name="signup" id="signup" action="Thankyou2.html" method="post">
+                <div class="center">
+                    <label for="fname"> First Name:</label>
+                    <input type="text" name="fname" id="fname" minlength="1" maxlength="30"
+                    title="Letters, dashes, and apostrophes only" 
+                    pattern="[a-zA-Z'}1-30}" 
+                    onblur="validateFname()"
+                    required
+                    placeholder="Zach"
+                    />
+                    <span class="error" id="fname-error"></span>
+
+                    <label for="mname"> Middle Initial:</label>
+                    <input type="text" name="mname" id="mname" minlength="0" maxlength="1"
+                    title="Letters only" 
+                    pattern="[a-zA-Z'}0-1}" 
+                    onblur="validateMname()"
+                    placeholder="J"
+                    />
+                    <span class="error" id="mname-error"></span>
+
+                    <label for="lname"> Last Name:</label>
+                    <input type="text" name="lname" id="lname" minlength="1" maxlength="30"
+                    title="Letters, dashes, and apostrophes only" 
+                    pattern="[a-zA-Z'}1-30}" 
+                    onblur="validateLname()"
+                    required
+                    placeholder="Qi"
+                    />
+                    <span class="error" id="lname-error"></span>
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="dob"> Date of Birth:</label>
+                    <input type="date"name="dob" id="dob"
+                    onblur="validateDob()"
+                    required
+                    placeholder="MM/DD/YYYY"
+                    />
+
+                    <span class="error" id="dob-error"></span>
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="ss"> Social Security:</label>
+                    <input type="text" name="ss" id="ss" minlength="9" maxlength="11"
+                    title="Numbers only"
+                    onblur="validateSs()"
+                    required
+                    placeholder="123-45-6789"
+                    />
+                    <span class="error" id="ss-error"></span>
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="add1"> Address Line 1:</label>
+                    <input type="text" name="add1" id="add1" minlength="1" maxlength="30"
+                    title="Letters, dashes, and apostrophes only" 
+                    onblur="validateAdd1()"
+                    required
+                    placeholder="8076 Cypresswood Dr"
+                    />
+                    <span class="error" id="add1-error"></span>
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="add2"> Address Line 2:</label>
+                    <input type="text" name="add2" id="add2" minlength="1" maxlength="30"
+                    title="Please enter your address"
+                    placeholder="8076 Cypresswood Dr"
+                    onblur="validateAdd2()"
+                    />
+                    <span class="error" id="add2-error"></span>
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="cty"> City:</label>
+                    <input type="text" name="cty" id="cty" minlength="1" maxlength="30"
+                    title="Please enter your city"
+                    onblur="validateCty()"
+                    required
+                    placeholder="Austin"
+                    />
+                    <span class="error" id="cty-error"></span>
+
+                    <label for="state"> State:</label>
+                    <select name="state" id="state">
+                        <option value="">Select a state</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                        </option>
+                    </select>
+
+                    <label for="zip"> Zip Code:</label>
+                    <input type="text" name="zip" id="zip" minlength="5" maxlength="10"
+                    title="Numbers only" 
+                    pattern="[0-9]{5}" 
+                    onblur="validateZip()"
+                    required
+                    placeholder="77001"
+                    />
+                    <span class="error" id="zip-error"></span>
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="phone"> Phone Number:</label>
+                    <input type="text" name="phone" id="phone" minlength="10" maxlength="15" 
+                    title="Numbers only" 
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                    onblur="validatePhone()"
+                    placeholder="123-456-7890"
+                    required
+                    />
+                    <span class="error" id="phone-error"></span>
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="email"> Email:</label>
+                    <input type="text" name="email" id="email" placeholder="name@domain.tld"
+                    title="Please enter a valid email address" 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+                    onblur="validateEmail()"
+                    required
+                    placeholder="name@gmail.com"
+                    />
+                    <span class="error" id="email-error"></span>
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="textarea"> Describe your current condition:</label>
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <textarea cols="50" rows="3" name="textarea"></textarea>
+
+                    <div>
+                    <br>
+                    </div>
+                    <!---Checkboxes for symptoms, radio buttons-->
+                    <label for="check"> Symptoms:</label>
+                    <input type="checkbox" name="check" id="one"> Headache
+                    <input type="checkbox" name="check" id="two"> Stomach pain
+                    <input type="checkbox" name="check" id="three"> Sore throat
+                    <input type="checkbox" name="check" id="four"> Congestion
+                    <input type="checkbox" name="check" id="five"> Body aches
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="radio"> Gender:</label>
+                    <input type="radio" name="r" id="male"> Male
+                    <input type="radio" name="r" id="female"> Female
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="radio"> Do you have Covid-19:</label>
+                    <input type="radio" name="r2" id="yes"> Yes
+                    <input type="radio" name="r2" id="no"> No
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="radio"> Patient type:</label>
+                    <input type="radio" name="r3" id="new"> New
+                    <input type="radio" name="r3" id="returning"> Returning
+
+                    <div>
+                    <br>
+                    </div>
+                    <!---Range slider for pain level--->
+                    <label for="slider">Level of pain</label>
+                    1<input type="range" name="slider" id="range-slider"min="1" max="10" value="5"
+                    />10
+
+                    <br>
+                    <span id="slider-output"></span>
+
+                    <div>
+                    <br>
+                    </div>
+                    <!---Input fields for user ID and password with validation requirements--->
+                    <label for="user"> User ID:</label>
+                    <input type="text" name="user" id="user" minlength="1" maxlength="20"
+                    title="Username must be at least 5 characters, and cannot start with a number"
+                    onblur="validateUser()"
+                    required
+                    placeholder="ZDQi978"
+                    />
+                    <span class="error" id="user-error"></span>
+
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="pwd"> Password:</label>
+                    <input type="password" name="pwd" id="pwd" minlength="8" maxlength="20"
+                    title="Password must contain at least 10 characters, at least one uppercase letter, one lowercase letter, one number, and one special character"
+                    onblur="validatePwd()"
+                    oninput="validatePwd()"
+                    onfocus="validatePwd()"
+                    required
+                    placeholder="P@ssw0rd123"
+                    />
+                    <span class="error" id="pwd-error"></span>
+                    
+                    <div>
+                    <br>
+                    </div>
+
+                    <label for="rpwd">Re-enter Password:</label>
+                    <input type="password" name="rpwd" id="rpwd" minlength="8" maxlength="20"
+                    title="Please re-enter your password"
+                    onblur="confirmPwd()"
+                    oninput="confirmPwd()"
+                    onfocus="confirmPwd()"
+                    required
+                    placeholder="P@ssw0rd123"
+                    />
+                    <span class="rpwd-error" id="rpwd-error"></span>
+                
+                </div>
+
+                <!---Submit button that redirects to a thank you page and clears all fields--->
+                <div class="center">
+                    <form action="Thankyou2.html">
+                    <input type="submit" value="SUBMIT" id="submit">
+                    <input type="reset" value="CLEAR ALL" id="clear">
+                    <input type="button" name="review" id="review" value="Review" onclick="reviewInput()"/>
+                </div>
+
+                </form>
+
+            <div class="pwd-message">
+                <span id="msg1"></span> <br/>
+                <span id="msg2"></span> <br/>
+                <span id="msg3"></span> <br/>
+                <span id="msg4"></span> <br/>
+                <span id="msg5"></span> <br/>
+                <span id="msg6"></span> <br/>
+                <span id="msg7"></span> <br/>
+                <span id="rpwd-error"></span> <br/>
+            </div>
+    
+            <center>
+                <p id="showInput"></p>
+            </center>
+
+        <div>
+            <hr>
+        </div>
+        <!---Footer section with contact information and a contact us button--->
+    <footer>
+        <div class="center">
+            <p>Flash Medical Center</p>
+            <p>PO BOX 69886</p>
+            <p>Cypress TX  77432</p>
+            <input type="button" value="Contact Us">
+        </div>
+    </footer>
+    <!---JavaScript to display the current date and update the slider output--->
+    <script src="Hw2.js"></script>
+</body> 
+</html>
